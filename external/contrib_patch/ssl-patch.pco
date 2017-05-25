@@ -1,0 +1,20 @@
+# $name  SSL Patch
+# $desc  Patches the SSL module to disable Root CA Verification. May be a security hazard. More info in github.com/SciresM/3DS-SSL-Patch.
+# $title 0004013000002F02
+# $ver   01
+# $uuid  0008
+
+# This patch was originally implemented by SciresM and I really
+# haven't given it the testing needed.
+
+# Having this enabled will make it so that anyone can steal your 3ds's private information over the network 
+# Because it makes all of your SSL requests insecure.
+
+# You may also need to send CLCertA as a client certificate. Unclear on that.
+# More information about it on github.com/SciresM/3DS-SSL-Patch
+
+rel exe_text
+
+find  03980818
+abortnf
+set   E71DF9373A1B300543BD62002E04D0201C2030311C
